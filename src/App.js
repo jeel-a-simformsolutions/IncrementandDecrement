@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
+import Button from '@material-ui/core/Button';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const App = () => {
 
@@ -24,8 +28,13 @@ const App = () => {
         <div className="center_div">
           <h1> {num} </h1>
           <div className="btn_div">
-            <button onClick={incNum}> Increment </button>
-            <button onClick={decNum}> decrement </button>
+            <Tooltip title="Add">
+              <Button onClick={incNum}>
+                < AddIcon /> </Button>
+            </Tooltip>
+            <Tooltip title="Delete">
+              <Button onClick={decNum}> <RemoveIcon /></Button>
+            </Tooltip>
           </div>
 
         </div>
